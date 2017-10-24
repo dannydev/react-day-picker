@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import DayPickerPropTypes from './PropTypes';
 import Weekdays from './Weekdays';
 import { getWeekArray } from './Helpers';
@@ -53,7 +54,7 @@ export default function Month({
 
 Month.propTypes = {
   month: PropTypes.instanceOf(Date).isRequired,
-  months: React.PropTypes.arrayOf(React.PropTypes.string),
+  months: PropTypes.arrayOf(PropTypes.string),
   captionElement: PropTypes.node.isRequired,
   firstDayOfWeek: PropTypes.number.isRequired,
   weekdaysLong: PropTypes.arrayOf(PropTypes.string),

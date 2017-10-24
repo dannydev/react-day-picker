@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Caption from './Caption';
 import Navbar from './Navbar';
 import Month from './Month';

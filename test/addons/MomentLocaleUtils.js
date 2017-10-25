@@ -6,9 +6,9 @@ describe('MomentLocaleUtils', () => {
     it('should return day as string', () => {
       const date = new Date('2015-12-20');
       const formattedDate = MomentLocaleUtils.formatDay(date);
-      expect(formattedDate).to.equal('Sun Dec 20, 2015');
+      expect(formattedDate).to.equal('Sat Dec 19, 2015');
       const formattedDateIT = MomentLocaleUtils.formatDay(date, 'it');
-      expect(formattedDateIT).to.equal('Dom 20 dic 2015');
+      expect(formattedDateIT).to.equal('Sab 19 dic 2015');
     });
   });
 

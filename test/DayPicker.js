@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import SyntheticEvent from 'react/lib/SyntheticEvent';
+// import SyntheticEvent from 'react/lib/SyntheticEvent';
 import { isElement } from 'react-addons-test-utils';
 import { shallow, mount, render } from 'enzyme';
 import { expect } from 'chai';
@@ -553,7 +553,7 @@ describe('<DayPicker />', () => {
       const wrapper = mount(<DayPicker onCaptionClick={ handleCaptionClick } />);
       wrapper.find('.DayPicker-Caption').simulate('click');
       expect(handleCaptionClick).to.have.been.calledWith(
-        sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e'),
+        sinon.match(e => e.target !== null, 'e'),
         sinon.match(date => date.getFullYear() === (new Date()).getFullYear() && date.getMonth() === (new Date()).getMonth(), 'currentMonth')
       );
     });
@@ -579,7 +579,7 @@ describe('<DayPicker />', () => {
       );
 
       const eventArgs = [
-        sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e'),
+        sinon.match(e => e.target !== null, 'e'),
         sinon.match(date => date.getFullYear() === (new Date()).getFullYear() && date.getMonth() === (new Date()).getMonth(), 'currentMonth'),
         sinon.match(mods => mods.foo, 'modifiers'),
       ];
@@ -634,7 +634,7 @@ describe('<DayPicker />', () => {
         />
       );
       const eventArgs = [
-        sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e'),
+        sinon.match(e => e.target !== null, 'e'),
         sinon.match(date => date.getFullYear() === (new Date()).getFullYear() && date.getMonth() === (new Date()).getMonth(), 'currentMonth'),
         sinon.match(mods => mods.foo && !mods.bar, 'modifiers'),
       ];
@@ -651,7 +651,7 @@ describe('<DayPicker />', () => {
         />
       );
       const eventArgs = [
-        sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e'),
+        sinon.match(e => e.target !== null, 'e'),
         sinon.match(date => date.getFullYear() === (new Date()).getFullYear() && date.getMonth() === (new Date()).getMonth(), 'currentMonth'),
         sinon.match(mods => mods.foo, 'modifiers'),
       ];
@@ -663,7 +663,7 @@ describe('<DayPicker />', () => {
       const wrapper = mount(<DayPicker onKeyDown={ handleKeyDown } />);
       wrapper.simulate('keyDown');
       expect(handleKeyDown).to.have.been.calledWith(
-        sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e')
+        sinon.match(e => e.target !== null, 'e')
       );
     });
     it('should call `onKeyDown` also when changing month is disabled', () => {
@@ -671,7 +671,7 @@ describe('<DayPicker />', () => {
       const wrapper = mount(<DayPicker onKeyDown={ handleKeyDown } canChangeMonth={ false } />);
       wrapper.simulate('keyDown');
       expect(handleKeyDown).to.have.been.calledWith(
-        sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e')
+        sinon.match(e => e.target !== null, 'e')
       );
     });
   });
